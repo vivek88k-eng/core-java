@@ -13,10 +13,10 @@ public class Main {
 
         // 9. Employee 
         Developer dev = new Developer();
-        dev.inputDev(1, "Alice", "Java");
+        dev.inputDev(1, "vinay", "Java");
         dev.display();
         Tester tester = new Tester();
-        tester.inputTester(2, "Bob", "Selenium");
+        tester.inputTester(2, "ani", "Selenium");
         tester.display();
         System.out.println("-----");
 
@@ -31,11 +31,11 @@ public class Main {
 
         // 11. Account 
         SavingsAccount sa = new SavingsAccount();
-        sa.id = 101; sa.name = "John"; sa.balance = 5000;
+        sa.id = 101; sa.name = "Vivek"; sa.balance = 5000;
         sa.display();
         sa.withdraw(2000);
         CurrentAccount ca = new CurrentAccount();
-        ca.id = 102; ca.name = "Mike"; ca.balance = 1000;
+        ca.id = 102; ca.name = "Mohit"; ca.balance = 1000;
         ca.display();
         ca.withdraw(1500);
         System.out.println("-----");

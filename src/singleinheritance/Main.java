@@ -6,13 +6,13 @@ public class Main {
     public static void main(String[] args) {
         
         System.out.println("=== Vehicle & Car Example ===");
-        Car car = new Car("Toyota", "Corolla");
+        Car car = new Car("BMW", "Corolla");
         car.start();
         System.out.println();
         car.drive();
 
         System.out.println("\n=== Employee & Manager Example ===");
-        Manager manager = new Manager("John", 85000, "IT Department");
+        Manager manager = new Manager("VIVEK", 85000, "IT Department");
         manager.showDetails();
 
         System.out.println("\n=== Shape & Rectangle Example ===");
@@ -30,7 +30,7 @@ public class Main {
         sa.addInterstRate();
         sa.display();
 
-        System.out.println("\n\n=== All examples executed successfully ===");
+        
     }
 }
 

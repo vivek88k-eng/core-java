@@ -1,6 +1,0 @@
-package ms;
-
-public interface Enrollable {
-	void enroll(Student student)throws EnrollmentException;
-
-}
