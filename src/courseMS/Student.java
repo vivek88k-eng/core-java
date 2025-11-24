@@ -1,0 +1,21 @@
+
+package courseMS;
+
+public class Student {
+	protected String studentId;
+	protected String name;
+	public Student(String studentId, String name) {
+		super();
+		this.studentId = studentId;
+		this.name = name;
+	}
+	
+	public String getStudentId() {
+		return studentId;
+	}
+	public String getName() {
+		return name;
+	}
+	
+
+}
