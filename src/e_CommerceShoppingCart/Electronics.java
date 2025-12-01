@@ -8,6 +8,6 @@ public class Electronics extends Product {
 
     @Override
     public void getDetails() {
-        System.out.println("ID" + productId +"Electronics: " + name + " | Price: " + price + " | Stock: " + quantity);
+        System.out.println("ID" + productId +"  | Electronics: " + name + " | Price: " + price + " | Stock: " + quantity);
     }
 }
