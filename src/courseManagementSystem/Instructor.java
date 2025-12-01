@@ -1,4 +1,4 @@
-package courseMS;
+package courseManagementSystem;
 
 public class Instructor {
 	protected String instructorId;

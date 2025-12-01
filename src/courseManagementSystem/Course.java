@@ -1,4 +1,4 @@
-package courseMS;
+package courseManagementSystem;
 
 public abstract class Course {
 	protected String courseId;

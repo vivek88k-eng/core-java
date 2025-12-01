@@ -1,5 +1,5 @@
 
-package courseMS;
+package courseManagementSystem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +53,7 @@ public class SMS {
 			}
 		}
 		System.out.print("EnterStudent Name:");
-		String name = sc.next();
+		String name = sc.nextLine();
 		Student st = new Student(id, name);
 		students.add(st);
 		System.out.println("STUDENT REGISTERED SUCCESSFULLY");
@@ -70,7 +70,7 @@ public class SMS {
 
 		}
 		System.out.print("Enter Instructor Name ");
-		String name = sc.next();
+		String name = sc.nextLine();
 		Instructor inst = new Instructor(id, name);
 		instructors.add(inst);
 		System.out.print("Intructor Registered Successfully");
@@ -237,10 +237,11 @@ public class SMS {
 					c.getCourseId() + "||" + c.getName() + "|" + c.getPrice() + "|" + c.getInstructor().getName());
 		}
 	}
+
 	private static void showDetails() {
 		System.out.print("Enter Course Id");
 		String id = sc.next();
-		for(Course c : courses) {
+		for (Course c : courses) {
 			if (c.getCourseId().equalsIgnoreCase(id)) {
 				c.showDetails();
 				return;
@@ -248,11 +249,12 @@ public class SMS {
 		}
 		System.out.println("Invalid Course Id");
 	}
+
 	private static void applyDiscount() {
 		System.out.print("Enter Course ID");
 		String id = sc.next();
-		for(Course c : courses) {
-			if(c.getCourseId().equalsIgnoreCase(id)) {
+		for (Course c : courses) {
+			if (c.getCourseId().equalsIgnoreCase(id)) {
 				System.out.println("Original Peice" + c.getPrice());
 				System.out.println("After Discount " + c.applyDiscount());
 				return;

@@ -1,4 +1,4 @@
-package shop;
+package e_CommerceShoppingCart;
 
 public class Grocery extends Product {
 
@@ -7,5 +7,7 @@ public class Grocery extends Product {
     }
 
     @Override
-    public void getDetails() { }
+    public void getDetails() {
+        System.out.println("ID" + productId +"Grocery: " + name + " | Price: " + price + " | Stock: " + quantity);
+    }
 }

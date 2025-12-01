@@ -1,5 +1,5 @@
 
-package courseMS;
+package courseManagementSystem;
 
 public class Student {
 	protected String studentId;
