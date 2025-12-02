@@ -1,5 +1,7 @@
 package courseManagementSystem;
 
+import java.util.List;
+
 public abstract class Course {
 	protected String courseId;
 	protected String name;
@@ -34,4 +36,5 @@ public abstract class Course {
 
 	public abstract double applyDiscount();
 
+	public abstract List<Student> getEnrolledStudents();
 }

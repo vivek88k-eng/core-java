@@ -23,7 +23,8 @@ public class SMS {
 			System.out.println("6.Genrate Enrollment Report");
 			System.out.println("7.Show CourseDetails");
 			System.out.println("8.Show Discont Price");
-			System.out.println("9.Exit");
+			System.out.println("9.Show Course of Student");
+			System.out.println("10.Exit");
 			System.out.println("Enter your Choice");
 			choice = sc.nextInt();
 			switch (choice) {
@@ -35,23 +36,46 @@ public class SMS {
 			case 6 -> showEnrollmentReport();
 			case 7 -> showDetails();
 			case 8 -> applyDiscount();
-			case 9 -> System.out.println("Exiting..............");
+			case 9 -> showCoursesOfStudent();
+			case 10 -> System.out.println("Exiting..............");
 			default -> System.out.println("Invaild Choice.");
 
 			}
 
-		} while (choice != 9);
+		} while (choice != 10);
 	}
-
+ private static void showCoursesOfStudent() {
+	 sc.nextLine();
+	System.out.println("Enter Student ID:");
+	String sid = sc.nextLine();
+	boolean found = false;
+	for (Course c : courses) {
+	  List<Student> list = c.getEnrolledStudents();
+	for(Student s : list) {
+		if (s.getStudentId().equalsIgnoreCase(sid)) {
+			if(!found) {
+				System.out.println("\nStudent is enrolled in :");
+				found = true;
+			}
+			System.out.println("Course Name->" + c.getName());
+		}
+	}
+	}
+	if(!found) {
+		System.out.println("Student is not enrolled in any courses");
+	}
+}
 	private static void registerStudent() {
 		System.out.print("Enter Student ID:");
 		String id = sc.next();
+		sc.nextLine();
 		for (Student s : students) {
 			if (s.getStudentId().equalsIgnoreCase(id)) {
 				System.out.println("Student with this ID alredy exists");
 				return;
 			}
 		}
+		sc.nextLine();
 		System.out.print("EnterStudent Name:");
 		String name = sc.nextLine();
 		Student st = new Student(id, name);
@@ -62,6 +86,7 @@ public class SMS {
 	private static void registerInstructor() {
 		System.out.print("Enter Instructor ID:");
 		String id = sc.next();
+		sc.nextLine();
 		for (Instructor i : instructors) {
 			if (i.getInstructorId().equalsIgnoreCase(id)) {
 				System.out.println("Instructor with this ID alredy exists");
@@ -71,6 +96,7 @@ public class SMS {
 		}
 		System.out.print("Enter Instructor Name ");
 		String name = sc.nextLine();
+		sc.nextLine();
 		Instructor inst = new Instructor(id, name);
 		instructors.add(inst);
 		System.out.print("Intructor Registered Successfully");
@@ -87,7 +113,8 @@ public class SMS {
 			}
 		}
 		System.out.print("Enter course Name");
-		String name = sc.next();
+		sc.nextLine();
+		String name = sc.nextLine();
 		System.out.print("Enter course Price");
 		double price = sc.nextDouble();
 
@@ -222,7 +249,7 @@ public class SMS {
 
 		System.out.println("  Enrolled Students:");
 		for (Student s : list) {
-			System.out.println("   - " + s.getStudentId() + " : " + s.getName());
+			System.out.println(" ID  - " + s.getStudentId() + "| NAME : " + s.getName());
 		}
 	}
 
@@ -233,8 +260,8 @@ public class SMS {
 		}
 		System.out.println("\n-----ALL COURSE-----");
 		for (Course c : courses) {
-			System.out.println(
-					c.getCourseId() + "||" + c.getName() + "|" + c.getPrice() + "|" + c.getInstructor().getName());
+			System.out.println("ID->"+
+					c.getCourseId() + "|COURSE NAME->" + c.getName() + "|PRICE->" + c.getPrice() + "|INSTRUCTOR NAME->" + c.getInstructor().getName());
 		}
 	}
 

@@ -12,7 +12,7 @@ public class LiveCourse extends Course implements Enrollable {
 		this.maxStudents = maxStuddents;
 		this.enrolledStudents = new ArrayList<>();
 	}
-
+    @Override
 	public List<Student> getEnrolledStudents() {
 		return enrolledStudents;
 	}
